@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ToastifiedAlert from './component/toastified';
+import Chat from './component/chat/Chat';
 
 function App() {
+  const [showToast, setShowToast] = useState(false);
+
+  const showToastMessage = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // Changed the duration to 3000ms
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 onClick={showToastMessage}>Click to show toast</h1>
+      {/* {showToast && <ToastifiedAlert message='message' />} */}
+      <Chat />
     </div>
   );
 }
