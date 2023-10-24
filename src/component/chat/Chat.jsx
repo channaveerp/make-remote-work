@@ -47,7 +47,9 @@ const ChatBot = () => {
 
   return (
     <div className='chatbot-container'>
+      <div className='header'>AjnaLens Support</div>
       <div className='chat-messages'>{renderMessages()}</div>
+
       <div className='chat-input'>
         <input
           type='text'
